@@ -1,0 +1,21 @@
+{
+  "name": "medkhoj-ai",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "install:all": "npm install && npm --prefix client install && npm --prefix server install",
+    "dev": "concurrently --kill-others \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "npm --prefix client run dev",
+    "dev:server": "npm --prefix server run dev",
+    "build": "npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "start:server": "npm --prefix server start",
+    "seed": "node server/seed-medicines.js"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
